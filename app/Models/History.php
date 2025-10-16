@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Testing\Fluent\Concerns\Has;
+
+class History extends Model
+{
+    //
+    use HasFactory;
+    protected $fillable = ['lamp_id','status'];
+
+    public function lamp()
+    {
+        return $this->belongsTo(Lamp::class);
+    }
+}
